@@ -3,9 +3,7 @@ package com.example.jsonmappertest.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.sun.org.apache.xpath.internal.operations.String;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
