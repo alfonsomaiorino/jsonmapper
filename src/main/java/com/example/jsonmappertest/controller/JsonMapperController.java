@@ -1,6 +1,6 @@
 package com.example.jsonmappertest.controller;
 
-import com.example.jsonmappertest.model.JsonMapped;
+import com.example.jsonmappertest.model.TestObject;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +14,13 @@ import java.util.List;
 public class JsonMapperController {
 
     @GetMapping("/jsonMapped")
-    public List<JsonMapped> returnJsonMapped() {
+    public List<TestObject> returnJsonMapped() {
         RestTemplate restTemplate = new RestTemplate();
         final String url = "http://localhost:8085/json";
 
-        ResponseEntity<List<JsonMapped>> result = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<JsonMapped>>() {});
-        return result.getBody();
+        ResponseEntity<List<TestObject>> result = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<TestObject>>() {});
+        List<TestObject> list = result.getBody();
+        return list;
     }
 
 }
